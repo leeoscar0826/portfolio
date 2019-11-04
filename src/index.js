@@ -41,7 +41,7 @@ function updatePage() {
 
 const router = (
 	<BreakpointProvider>
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<div>
 				<ul className="nav full-width float-left">
 					<div className="float-left">
