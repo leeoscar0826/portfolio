@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router, Switch, HashRouter } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Breakpoint, BreakpointProvider, setDefaultBreakpoints } from 'react-socks';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -41,13 +41,13 @@ function updatePage() {
 
 const router = (
 	<BreakpointProvider>
-		<HashRouter basename="/portfolio/">
+		<Router>
 			<div>
 				<ul className="nav full-width float-left">
 					<div className="float-left">
 						<div>
 							<li className="nav-item">
-								<Link to="/" className="nav-item-title nav-item-text lato nodec bold" style={ (history.location.pathname === '/portfolio/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "black" } } onClick={ updatePage }>Oscar Lee</Link>
+								<Link to="/" className="nav-item-title nav-item-text lato nodec bold" style={ (history.location.pathname === '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "black" } } onClick={ updatePage }>Oscar Lee</Link>
 							</li>
 						</div>
 					</div>
@@ -55,17 +55,17 @@ const router = (
 						<Breakpoint customQuery="(min-width: 576px)">
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to="/works" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/portfolio/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Works</Link>
+									<Link to="/works" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Works</Link>
 								</li>
 							</div>
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to="/about" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/portfolio/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>About</Link>
+									<Link to="/about" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>About</Link>
 								</li>
 							</div>
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to="/contact" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/portfolio/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Contact</Link>
+									<Link to="/contact" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Contact</Link>
 								</li>
 							</div>
 						</Breakpoint>
@@ -88,30 +88,30 @@ const router = (
 						<div className="menu-list float-left">
 							<ul style={{ listStyleType: "none" }}>
 								<li className="menu-link">
-									<Link to="/" className="nav-item-link lato nodec" style={ (history.location.pathname === '/portfolio/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Home</Link>
+									<Link to="/" className="nav-item-link lato nodec" style={ (history.location.pathname === '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Home</Link>
 								</li>
 								<li className="menu-link">
-									<Link to="/works" className="nav-item-link lato nodec" style={ (history.location.pathname === '/portfolio/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Work</Link>
+									<Link to="/works" className="nav-item-link lato nodec" style={ (history.location.pathname === '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Work</Link>
 								</li>
 								<li className="menu-link">
-									<Link to="/about" className="nav-item-link lato nodec" style={ (history.location.pathname === '/portfolio/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>About</Link>
+									<Link to="/about" className="nav-item-link lato nodec" style={ (history.location.pathname === '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>About</Link>
 								</li>
 								<li className="menu-link">
-									<Link to="/contact" className="nav-item-link lato nodec" style={ (history.location.pathname === '/portfolio/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Contact</Link>
+									<Link to="/contact" className="nav-item-link lato nodec" style={ (history.location.pathname === '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Contact</Link>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</Breakpoint>
 				<Switch>
-					<Route exact path="/" component={ App } />
-					<Route path="/works" component={ Works } />
-					<Route path="/about" component={ About } />
-					<Route path="/contact" component={ Contact } />
+					<Route exact path={process.env.PUBLIC_URL + "/"} component={ App } />
+					<Route path={process.env.PUBLIC_URL + "/works"} component={ Works } />
+					<Route path={process.env.PUBLIC_URL + "/about"} component={ About } />
+					<Route path={process.env.PUBLIC_URL + "/contact"} component={ Contact } />
 					<Route component={ NotFound } />
 				</Switch>
 			</div>
-		</HashRouter>
+		</Router>
 	</BreakpointProvider>
 );
 
