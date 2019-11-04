@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <script type="text/javascript">
+        /*
+         * Note that if you are setting up a Project Pages site and not using a custom domain (i.e. your site's address is username.github.io/repo-name),
+         * then you need to set segmentCount to 1 in the 404.html file in order to keep /repo-name in the path after the redirect.
+         */
+        var segmentCount = 1;
+		var l = window.location;
+		l.replace(
+			l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        	l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        	l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        	(l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+			l.hash
+		);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
