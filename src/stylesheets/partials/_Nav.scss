@@ -1,0 +1,101 @@
+
+.icon {
+	position: absolute;
+	padding: 0 5px;
+	top: 50%;
+
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.nav {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 50px;
+	border-bottom: 1px solid $gray;
+}
+
+.nav-item {
+	display: inline;
+}
+
+.nav-item-title {
+	color: $black;
+
+	@media screen and (min-width: 0px) {
+		margin: 0 0 0 50px;
+	}
+	@media screen and (min-width: 992px) {
+		margin: 0 0 0 75px;
+	}
+	@media screen and (min-width: 1200px) {
+		margin: 0 0 0 100px;
+	}
+}
+
+.nav-item-link {
+	color: $dark-gray;
+
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+
+	@media screen and (min-width: 0px) {
+		margin: 0 50px 0 0;
+	}
+	@media screen and (min-width: 992px) {
+		margin: 0 75px 0 0;
+	}
+	@media screen and (min-width: 1200px) {
+		margin: 0 100px 0 0;
+	}
+}
+
+.nav-item-link:hover {
+	color: $black !important;
+}
+
+.nav-item-text {
+	line-height: 50px;
+	display: block;
+}
+
+.nav-item-button {
+	color: $black;
+	margin: 0 79px 0 0;
+
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
+.menu {
+	position: absolute;
+	background: $white;
+	left: -100%;
+
+	-webkit-transition: left 0.2s ease-in-out;
+	-moz-transition: left 0.2s ease-in-out;
+	-ms-transition: left 0.2s ease-in-out;
+	-o-transition: left 0.2s ease-in-out;
+	transition: left 0.2s ease-in-out;
+}
+
+.menu-list {
+	width: calc(100% - 100px);
+	margin: 0 50px;
+	padding: 0 0 50px 0;
+}
+
+.menu-link {
+	margin-top: 50px;
+	font-size: 42px;
+}
