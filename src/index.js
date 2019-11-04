@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Switch, HashRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Breakpoint, BreakpointProvider, setDefaultBreakpoints } from 'react-socks';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -41,7 +41,7 @@ function updatePage() {
 
 const router = (
 	<BreakpointProvider>
-		<Router basename="/portfolio/">
+		<HashRouter basename="/portfolio/">
 			<div>
 				<ul className="nav full-width float-left">
 					<div className="float-left">
@@ -111,7 +111,7 @@ const router = (
 					<Route component={ NotFound } />
 				</Switch>
 			</div>
-		</Router>
+		</HashRouter>
 	</BreakpointProvider>
 );
 
