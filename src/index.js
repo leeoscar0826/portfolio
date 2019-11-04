@@ -47,7 +47,7 @@ const router = (
 					<div className="float-left">
 						<div>
 							<li className="nav-item">
-								<Link to="/" className="nav-item-title nav-item-text lato nodec bold" style={ (history.location.pathname === '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "black" } } onClick={ updatePage }>Oscar Lee</Link>
+								<Link to={process.env.PUBLIC_URL + "/"} className="nav-item-title nav-item-text lato nodec bold" style={ (history.location.pathname === '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "black" } } onClick={ updatePage }>Oscar Lee</Link>
 							</li>
 						</div>
 					</div>
@@ -55,17 +55,17 @@ const router = (
 						<Breakpoint customQuery="(min-width: 576px)">
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to="/works" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Works</Link>
+									<Link to={process.env.PUBLIC_URL + "/works"} className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Works</Link>
 								</li>
 							</div>
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to="/about" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>About</Link>
+									<Link to={process.env.PUBLIC_URL + "/about"} className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>About</Link>
 								</li>
 							</div>
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to="/contact" className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Contact</Link>
+									<Link to={process.env.PUBLIC_URL + "/contact"} className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Contact</Link>
 								</li>
 							</div>
 						</Breakpoint>
@@ -88,16 +88,16 @@ const router = (
 						<div className="menu-list float-left">
 							<ul style={{ listStyleType: "none" }}>
 								<li className="menu-link">
-									<Link to="/" className="nav-item-link lato nodec" style={ (history.location.pathname === '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Home</Link>
+									<Link to={process.env.PUBLIC_URL + "/"} className="nav-item-link lato nodec" style={ (history.location.pathname === '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Home</Link>
 								</li>
 								<li className="menu-link">
-									<Link to="/works" className="nav-item-link lato nodec" style={ (history.location.pathname === '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Work</Link>
+									<Link to={process.env.PUBLIC_URL + "/works"} className="nav-item-link lato nodec" style={ (history.location.pathname === '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Work</Link>
 								</li>
 								<li className="menu-link">
-									<Link to="/about" className="nav-item-link lato nodec" style={ (history.location.pathname === '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>About</Link>
+									<Link to={process.env.PUBLIC_URL + "/about"} className="nav-item-link lato nodec" style={ (history.location.pathname === '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>About</Link>
 								</li>
 								<li className="menu-link">
-									<Link to="/contact" className="nav-item-link lato nodec" style={ (history.location.pathname === '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Contact</Link>
+									<Link to={process.env.PUBLIC_URL + "/contact"} className="nav-item-link lato nodec" style={ (history.location.pathname === '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Contact</Link>
 								</li>
 							</ul>
 						</div>
