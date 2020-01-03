@@ -1,12 +1,4 @@
 
-.lato {
-	font-family: $lato;
-}
-
-.merriweather {
-	font-family: $merriweather;
-}
-
 .full-height {
 	height: 100%;
 }
@@ -31,6 +23,10 @@
 	float: right;
 }
 
+.align-center {
+	text-align: center;
+}
+
 .nodec {
 	text-decoration: none;
 }
@@ -41,4 +37,70 @@
 
 .cursor:hover {
 	cursor: pointer;
+}
+
+.icon {
+	position: absolute;
+	padding: 0 5px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@-webkit-keyframes strikethrough {
+	0% { width: 0%; }
+	100% { width: 100% }
+}
+
+@-moz-keyframes strikethrough {
+	0% { width: 0%; }
+	100% { width: 100%; }
+}
+
+@keyframes strikethrough {
+	0% { width: 0%; }
+	100% { width: 100%; }
+}
+
+.clickable-thin {
+	position: relative;
+	padding: 0 5px;
+}
+
+.clickable-thin:hover:after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: $black;
+	animation-name: strikethrough;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.clickable-reg {
+	position: relative;
+	padding: 0 10px;
+}
+
+.clickable-reg:hover:after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: $black;
+	animation-name: strikethrough;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
 }

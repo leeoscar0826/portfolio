@@ -5,7 +5,7 @@ class Works extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1 className="lato">Works</h1>
+				<h1>Works</h1>
 			</div>
 		);
 	}

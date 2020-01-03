@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import { Breakpoint, BreakpointProvider, setDefaultBreakpoints } from 'react-socks';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -14,8 +13,6 @@ import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 
 import './stylesheets/main.css';
-
-const history = createBrowserHistory();
 
 setDefaultBreakpoints ([
 	{ xs: 0 },
@@ -47,7 +44,7 @@ const router = (
 					<div className="float-left">
 						<div>
 							<li className="nav-item">
-								<Link to={process.env.PUBLIC_URL + "/"} className="nav-item-title nav-item-text lato nodec bold" style={ (history.location.pathname === process.env.PUBLIC_URL + '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "black" } } onClick={ updatePage }>Oscar Lee</Link>
+								<Link to={process.env.PUBLIC_URL + "/"} className="nav-item-title nav-item-text nodec clickable-thin" onClick={ updatePage }>Oscar Lee</Link>
 							</li>
 						</div>
 					</div>
@@ -55,24 +52,24 @@ const router = (
 						<Breakpoint customQuery="(min-width: 576px)">
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to={process.env.PUBLIC_URL + "/works"} className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Works</Link>
+									<Link to={process.env.PUBLIC_URL + "/about"} className="nav-item-link nav-item-text nodec clickable-thin" onClick={ updatePage }>About</Link>
 								</li>
 							</div>
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to={process.env.PUBLIC_URL + "/about"} className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>About</Link>
+									<Link to={process.env.PUBLIC_URL + "/works"} className="nav-item-link nav-item-text nodec clickable-thin" onClick={ updatePage }>Works</Link>
 								</li>
 							</div>
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<Link to={process.env.PUBLIC_URL + "/contact"} className="nav-item-link nav-item-text lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777"  } } onClick={ updatePage }>Contact</Link>
+									<Link to={process.env.PUBLIC_URL + "/contact"} className="nav-item-link nav-item-text nodec clickable-thin" onClick={ updatePage }>Contact</Link>
 								</li>
 							</div>
 						</Breakpoint>
 						<Breakpoint customQuery="(max-width: 575px)">
 							<div className="full-height float-left">
 								<li className="nav-item">
-									<p className="nav-item-button nav-item-text lato cursor" onClick={ openMenu }>Menu<MenuIcon className="icon" /></p>
+									<p className="nav-item-button nav-item-text cursor" onClick={ openMenu }>Menu<MenuIcon className="icon" /></p>
 								</li>
 							</div>
 						</Breakpoint>
@@ -82,22 +79,22 @@ const router = (
 					<div className="menu full-width full-height">
 						<div className="nav full-width float-left">
 							<div className="float-right">
-								<p className="nav-item-button nav-item-text lato cursor" onClick={ closeMenu }>Menu<CloseIcon className="icon" /></p>
+								<p className="nav-item-button nav-item-text cursor" onClick={ closeMenu }>Menu<CloseIcon className="icon" /></p>
 							</div>
 						</div>
 						<div className="menu-list float-left">
 							<ul style={{ listStyleType: "none" }}>
 								<li className="menu-link">
-									<Link to={process.env.PUBLIC_URL + "/"} className="nav-item-link lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Home</Link>
+									<Link to={process.env.PUBLIC_URL + "/"} className="nav-item-link nodec clickable-reg" onClick={ updatePage }>Home</Link>
 								</li>
 								<li className="menu-link">
-									<Link to={process.env.PUBLIC_URL + "/works"} className="nav-item-link lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/works') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Work</Link>
+									<Link to={process.env.PUBLIC_URL + "/about"} className="nav-item-link nodec clickable-reg" onClick={ updatePage }>About</Link>
 								</li>
 								<li className="menu-link">
-									<Link to={process.env.PUBLIC_URL + "/about"} className="nav-item-link lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/about') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>About</Link>
+									<Link to={process.env.PUBLIC_URL + "/works"} className="nav-item-link nodec clickable-reg" onClick={ updatePage }>Work</Link>
 								</li>
 								<li className="menu-link">
-									<Link to={process.env.PUBLIC_URL + "/contact"} className="nav-item-link lato nodec" style={ (history.location.pathname === process.env.PUBLIC_URL + '/contact') ? { borderBottom: "1px solid black", color: "black" } : { borderBottom: "none", color: "#777" } } onClick={ updatePage }>Contact</Link>
+									<Link to={process.env.PUBLIC_URL + "/contact"} className="nav-item-link nodec clickable-reg" onClick={ updatePage }>Contact</Link>
 								</li>
 							</ul>
 						</div>
